@@ -9,7 +9,3 @@ public class Main {
         employee[4] = new Employer("Dub Ivan", "Engineer", "dubI@mailbox.com", 892312322, 31000, 41);
     }
 }
-
-
-
-
