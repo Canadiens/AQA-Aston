@@ -1,5 +1,4 @@
 package org.example;
-
 public class Park {
     private class Attractions {
         private final String attractionName;
