@@ -52,7 +52,6 @@ public class Main {
     public static int printNumber(int a) {
         if (a >= 0) {
             System.out.println("Положительное число");
-
         } else {
             System.out.println("Отрицательное число");
         }
