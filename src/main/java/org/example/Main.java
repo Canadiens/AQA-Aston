@@ -1,19 +1,11 @@
 package org.example;
-
 public class Main {
     public static void main(String[] args) {
         // задание 6
-        int[] arr = new int[]{1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
-
-        {
-            for (int i = 0; i < arr.length; i++) {
-                if (arr[i] > 0) {
-                    arr[i] = arr[i] - 1;
-                } else {
-                    arr[i] = arr[i] + 1;
-                }
-                System.out.println(arr[i]);
-            }
+        int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (arr[i] > 0) ? arr[i] - 1 : arr[i] + 1;
+            System.out.println(arr[i]);
         }
         // задание 7
         int[] arr2 = new int[100];
@@ -49,52 +41,52 @@ public class Main {
         isYear(2001);
         backArray(9, 1510);
     }
-       // задание 1
-      public static boolean isTrue(int a, int b) {
+    // задание 1
+    public static boolean isTrue(int a, int b) {
         int sum = a + b;
         boolean res = (sum >= 10 && sum <= 20);
         System.out.println(res);
         return res;
     }
-        // задание 2
-        public static int printNumber(int a) {
-            if (a >= 0) {
-                System.out.println("Положительное число");
+    // задание 2
+    public static int printNumber(int a) {
+        if (a >= 0) {
+            System.out.println("Положительное число");
 
-            } else {
-                System.out.println("Отрицательное число");
-            }
-            return a;
+        } else {
+            System.out.println("Отрицательное число");
         }
-        // задание 3
-          public static int integerNumber(int f) {
-              if (f < 0) {
-                  System.out.println(true);
-              } else {
-                  System.out.println(false);
-              }
-              return f;
-          }
-        // задание 4
-            public static void printString (String inputString,int numberOfTimes){
-                for (int i = 0; i < numberOfTimes; i++) {
-                    System.out.println(inputString);
-              }
+        return a;
+    }
+    // задание 3
+    public static int integerNumber(int f) {
+        if (f < 0) {
+            System.out.println(true);
+        } else {
+            System.out.println(false);
         }
-        // задание 5
-            public static void isYear ( int year){
-               if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
-                   System.out.println("Год высокосный");
-               } else {
-                   System.out.println("Год не высокосный");
-               }
+        return f;
+    }
+    // задание 4
+    public static void printString(String inputString, int numberOfTimes) {
+        for (int i = 0; i < numberOfTimes; i++) {
+            System.out.println(inputString);
         }
-           // задание 10
-        public static void backArray (int len, int initialValue){
-            int[] array = new int[len];
-            for (int i = 0; i < array.length; i++) {
-                array[i] = initialValue;
-                System.out.println(array[i]);
-            }
+    }
+    // задание 5
+    public static void isYear(int year) {
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println("Год высокосный");
+        } else {
+            System.out.println("Год не высокосный");
         }
+    }
+    // задание 10
+    public static void backArray(int len, int initialValue) {
+        int[] array = new int[len];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = initialValue;
+            System.out.println(array[i]);
+        }
+    }
 }
