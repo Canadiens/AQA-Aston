@@ -1,5 +1,4 @@
 package org.example;
-
 public class Lesson_2 {
     static void printThreeWords() {
         String fruit = "Orange\nBanana\nApple";
