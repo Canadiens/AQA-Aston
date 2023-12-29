@@ -16,10 +16,10 @@ public class Lesson_2 {
     }
 
     static void printColor() {
-        int value = 101;
+        int value = 10;
         if (value <= 0) {
             System.out.println("Красный");
-        } else if (0 < value && value <= 100) {
+        } else if (value <= 100) {
             System.out.println("Желтый");
         } else {
             System.out.println("Зеленый");
