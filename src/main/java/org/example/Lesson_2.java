@@ -4,7 +4,6 @@ public class Lesson_2 {
         String fruit = "Orange\nBanana\nApple";
         System.out.println(fruit);
     }
-
     static void checkSumSing() {
         int a = 10;
         int b = -100;
@@ -14,7 +13,6 @@ public class Lesson_2 {
             System.out.println("Сумма отрицательная");
         }
     }
-
     static void printColor() {
         int value = 10;
         if (value <= 0) {
@@ -25,7 +23,6 @@ public class Lesson_2 {
             System.out.println("Зеленый");
         }
     }
-
     static void compareNumber() {
         int a = 121354;
         int b = 121384;
