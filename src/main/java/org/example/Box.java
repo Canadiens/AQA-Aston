@@ -8,7 +8,6 @@ public class Box<T extends Fruit> {
     public Box(T... content) {
         this.content = new ArrayList<>(Arrays.asList(content));
     }
-
     public float getWeight() {
         if (content.size() == 0) return 0;
         float weight = 0;
@@ -21,15 +20,12 @@ public class Box<T extends Fruit> {
     public void addFruit(T... content) {
         this.content.addAll(Arrays.asList(content));
     }
-
     public void clear() {
         content.clear();
     }
-
     public boolean compare(Box box) {
         return Math.abs(this.getWeight() - box.getWeight()) < 0.0001;
     }
-
     public void trade(Box<? super T> box) {
         box.content.addAll(this.content);
         clear();
