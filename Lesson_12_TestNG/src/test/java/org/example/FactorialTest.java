@@ -1,12 +1,9 @@
 package org.example;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import org.testng.annotations.Test;
+import static org.testng.Assert.*;
 public class FactorialTest {
     @Test
-    @DisplayName("Вычисление факториала")
     void testFactorial() {
         assertEquals(1, Factorial.getFactorial(0));
         assertEquals(1, Factorial.getFactorial(1));
