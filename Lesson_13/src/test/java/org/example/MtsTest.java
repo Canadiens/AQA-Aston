@@ -23,7 +23,6 @@ public class MtsTest {
         driver = new EdgeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
-
     @AfterEach
     public void tearDown() {
         if (driver != null) {
