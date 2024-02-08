@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -21,7 +22,7 @@ public class MtsTest {
     @BeforeEach
     public void setUp() {
         driver = new EdgeDriver();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
     }
     @AfterEach
     public void tearDown() {
@@ -70,10 +71,15 @@ public class MtsTest {
 
         driver.switchTo().parentFrame();
 
-        checkText("pay-connection");
-        checkText("pay-internet");
-        checkText("pay-instalment");
-        checkText("pay-arrears");
+        List<String> connection = Arrays.asList("Номер телефона", "Сумма", "E-mail для отправки чека");
+        List<String> internet = Arrays.asList("Номер абонента", "Сумма", "E-mail для отправки чека");
+        List<String> instalment = Arrays.asList("Номер счета на 44", "Сумма", "E-mail для отправки чека");
+        List<String> arrears = Arrays.asList("Номер счета на 2073", "Сумма", "E-mail для отправки чека");
+
+        checkText("pay-connection",connection);
+        checkText("pay-internet",internet);
+        checkText("pay-instalment",instalment);
+        checkText("pay-arrears",arrears);
     }
 
     private void checkTextPay(String label) {
@@ -82,14 +88,13 @@ public class MtsTest {
         Assertions.assertEquals(label, labelText);
     }
 
-    private void checkText(String formId) {
+    private void checkText(String formId,List<String> textPlaceholders) {
         WebElement form = driver.findElement(By.id(formId));
-
         List<WebElement> textFields = form.findElements(By.tagName("input"));
         for (WebElement inputField : textFields) {
             String placeholder = inputField.getAttribute("placeholder");
             if (!placeholder.isEmpty()) {
-                assertTrue(inputField.isEnabled());
+                assertTrue(textPlaceholders.contains(placeholder));
             }
         }
     }
