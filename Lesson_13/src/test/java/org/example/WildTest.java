@@ -3,7 +3,7 @@ package org.example;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class WildberriesTest extends HomePage {
+public class WildTest extends HomePage {
 
     private String nameOneFirstPage;
     private String nameTwoFirstPage;
@@ -28,16 +28,16 @@ public class WildberriesTest extends HomePage {
 
     }
 
-         @Test
-         void checkQuantity() {
-             addToBasket();
-            BasketBtn();
-             assertEquals("2", driver.findElement(getQuantity).getAttribute("childElementCount"));
+    @Test
+    void checkQuantity() {
+        addToBasket();
+        BasketBtn();
+        assertEquals("2", driver.findElement(getQuantity).getAttribute("childElementCount"));
 
-         }
+    }
 
-          @Test
-          void checkPrice() throws InterruptedException {
+    @Test
+    void checkPrice() throws InterruptedException {
         addToBasket();
         BasketBtn();
         Thread.sleep(2000);
@@ -51,4 +51,3 @@ public class WildberriesTest extends HomePage {
 
     }
 }
-
