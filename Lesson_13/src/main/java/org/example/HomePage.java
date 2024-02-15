@@ -12,7 +12,6 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.time.Duration;
 
-
 public class HomePage {
     public static WebDriver driver;
     public static By productLocatorOne = By.xpath("//article[@data-card-index='0']");
@@ -28,7 +27,6 @@ public class HomePage {
     public By sellSecond = By.xpath("//div[@class='accordion__list-item list-item j-b-basket-item'][2]" + "//div[@class='list-item__price-new']");
     public By priseTotalBasket = By.xpath("//div[@class='basket-order__b-top b-top']//span//span");
 
-
     @BeforeEach
     public void setUp() {
         EdgeOptions options = new EdgeOptions().addArguments("--start-maximized");
@@ -36,12 +34,10 @@ public class HomePage {
         driver.get("https://www.wildberries.ru/");
         driver.manage().timeouts().implicitlyWait((Duration.ofSeconds(5)));
     }
-
     public void addToBasket() {
         addToBasket(productLocatorOne);
         addToBasket(productLocatorTwo);
     }
-
     private void addToBasket(By productLocator) {
         WebElement product = driver.findElement(productLocator);
         new Actions(driver).moveToElement(product).perform();
@@ -59,7 +55,6 @@ public class HomePage {
     public void BasketBtn() {
         driver.findElement(basketClick).click();
     }
-
     @AfterEach
     public void tearDown() {
         if (driver != null) {

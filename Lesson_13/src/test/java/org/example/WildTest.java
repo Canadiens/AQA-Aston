@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class WildTest extends HomePage {
-
     private String nameOneFirstPage;
     private String nameTwoFirstPage;
     private String nameOneBasket;
@@ -35,7 +34,6 @@ public class WildTest extends HomePage {
         assertEquals("2", driver.findElement(getQuantity).getAttribute("childElementCount"));
 
     }
-
     @Test
     void checkPrice() throws InterruptedException {
         addToBasket();
@@ -48,6 +46,5 @@ public class WildTest extends HomePage {
         priseTotal = Integer.parseInt(driver.findElement(priseTotalBasket)
                 .getText().replaceAll("[^0-9]", ""));
         assertEquals((firstPrice + secondPrice), priseTotal);
-
     }
 }
