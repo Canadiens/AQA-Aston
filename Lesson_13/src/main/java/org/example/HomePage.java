@@ -60,10 +60,10 @@ public class HomePage {
         driver.findElement(basketClick).click();
     }
 
-  /*  @AfterEach
+    @AfterEach
     public void tearDown() {
         if (driver != null) {
             driver.quit();
         }
-    }*/
+    }
 }
