@@ -4,6 +4,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -36,6 +37,7 @@ public class PixelTest {
     }
 
     @Test
+    @Step
     public void checkSum() {
         driver.findElementById("com.google.android.calculator:id/digit_5").click();
         driver.findElementById("com.google.android.calculator:id/op_add").click();
@@ -45,6 +47,7 @@ public class PixelTest {
     }
 
     @Test
+    @Step
     void checkDeduction() {
         driver.findElementById("com.google.android.calculator:id/digit_9").click();
         driver.findElementById("com.google.android.calculator:id/op_sub").click();
@@ -54,6 +57,7 @@ public class PixelTest {
     }
 
     @Test
+    @Step
     void checkMultiplying() {
         driver.findElementById("com.google.android.calculator:id/digit_9").click();
         driver.findElementById("com.google.android.calculator:id/op_mul").click();
@@ -61,8 +65,8 @@ public class PixelTest {
         driver.findElementById("com.google.android.calculator:id/eq").click();
         assertEquals("81", driver.findElementById("com.google.android.calculator:id/result_final").getText());
     }
-
-    @Test
+  @Test
+    @Step
     void checkDividing() {
         driver.findElementById("com.google.android.calculator:id/digit_1").click();
         driver.findElementById("com.google.android.calculator:id/digit_6").click();
